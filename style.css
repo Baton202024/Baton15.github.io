@@ -1,16 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
+    background-color: #131316;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
     padding: 0;
-    background-color: #ffffff;
+    margin: 0;
 }
 
 header {
-    background-color: #333;
-    color: white;
+    background-color: #636363;
+    color: black;
     padding: 20px 5px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgb(255, 255, 255);
 }
 
 .header-container {
@@ -37,39 +41,29 @@ nav ul li {
 }
 
 .container {
-    background-color: #ffffff;
+    background-color: black;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgb(255, 255, 255);
 }
 
 .post-title {
     font-size: 1.8rem;
-    color: #333;
-}
-
-.external-link {
-    text-decoration: none;
-    color: #007acc;
-    font-weight: bold;
-}
-
-.external-link:hover {
-    color: #007acc;
+    color: rgb(197, 196, 196)eae;
 }
 
 .main-content {
     margin-bottom: 20px;
 }
 
-article {
-    background-color: rgb(192, 192, 192);
+section {
+    background-color: rgb(103, 103, 103);
     padding: 20px;
     margin-top: 20px;
 }
 
 footer {
     background-color: #333;
-    color: rgb(192, 192, 192);
+    color: rgb(103, 103, 103);
     text-align: center;
     padding: 10px 0;
     position: fixed;
@@ -80,7 +74,7 @@ footer {
 .hover-underline-animation {
     display: inline-block;
     position: relative;
-    color: black;
+    color: white;
     cursor: pointer;
 }
 
@@ -92,7 +86,7 @@ footer {
     display: block;
     margin-top: 0px;
     right: 0;
-    background-color: black;
+    background-color: white;
     transition: width 0.4s ease, right 0.4s ease;
 }
 
@@ -105,42 +99,62 @@ footer {
 }
 
 a {
-    
-        text-decoration: none;
-        color: black;
+
+    text-decoration: none;
+    color: white;
 }
+
 .button {
-    background-color: #007bff; 
-    border: none; 
-    color: white; 
+    background-color: #007bff;
+    border: none;
+    color: black;
     padding: 15px 32px;
     text-align: center;
-    text-decoration: none; 
-    display: inline-block; 
-    font-size: 16px; 
-    margin: 15px 4px; 
-    cursor: pointer; 
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 15px 4px;
+    cursor: pointer;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
     transition: background-color 0.3s;
     text-align: center;
 }
+
 .button:hover {
-    background-color: #0056b3; 
+    background-color: #0056b3;
 }
+
 .button:active {
     background-color: #004085;
-    box-shadow: 0 5px #666; 
+    box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
+
 .button-text {
-    font-weight: bold; 
+    font-weight: bold;
 }
+
 .button-icon {
-    padding-right: 8px; 
+    padding-right: 8px;
     text-align: center;
 }
+
 .download-description {
     margin-left: 32px;
 }
 
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform:translateX(0);
+}
