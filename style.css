@@ -37,13 +37,7 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
-}
-
-.container {
-    background-color: black;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgb(255, 255, 255);
+    margin-right: 10px;
 }
 
 .post-title {
@@ -59,6 +53,9 @@ section {
     background-color: rgb(103, 103, 103);
     padding: 20px;
     margin-top: 20px;
+    border-radius: 25px;
+    margin: 15px;
+
 }
 
 footer {
