@@ -17,3 +17,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
+
+  function toggleReadMore(button) {
+    const content = button.previousElementSibling;
+    if (content.style.maxHeight === "0px" || content.style.maxHeight === "") {
+        content.style.maxHeight = content.scrollHeight + "px";
+        button.classList.remove("collapsed");
+        button.classList.add("expanded");
+    } else {
+        content.style.maxHeight = "0";
+        button.classList.remove("expanded");
+        button.classList.add("collapsed");
+    }
+}
