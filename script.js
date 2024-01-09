@@ -1,36 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        console.log(entry);
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        } else {
-          entry.target.classList.remove('show');
-        }
-      });
-    });
-  
-    const sectionsToObserve = document.querySelectorAll(".hidden");
-  
-    sectionsToObserve.forEach((section) => {
-      observer.observe(section);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      console.log(entry);
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      } else {
+        entry.target.classList.remove('show');
+      }
     });
   });
-  
 
-  function toggleReadMore(button) {
-    const content = button.previousElementSibling;
-    const section = content.parentElement;
-    const maxHeight = "400px"; // Set your desired max height for the "read more" content here
-    
-    if (content.style.maxHeight === maxHeight) {
-        content.style.maxHeight = "0";
-        section.style.maxHeight = "auto";
-        button.innerText = "Read More";
-    } else {
-        content.style.maxHeight = maxHeight;
-        section.style.maxHeight = "400px"; // Adjust this value as needed
-        button.innerText = "Read Less";
-    }
+  const sectionsToObserve = document.querySelectorAll(".hidden");
+
+  sectionsToObserve.forEach((section) => {
+    observer.observe(section);
+  });
+});
+
+
+function toggleReadMore(button) {
+  const content = button.previousElementSibling;
+  if (content.style.maxHeight === "0px" || content.style.maxHeight === "") {
+      content.style.maxHeight = content.scrollHeight + "px";
+      button.classList.remove("collapsed");
+      button.classList.add("expanded");
+  } else {
+      content.style.maxHeight = "0";
+      button.classList.remove("expanded");
+      button.classList.add("collapsed");
+  }
 }
-
