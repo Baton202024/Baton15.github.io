@@ -54,7 +54,8 @@ section {
     padding: 20px;
     border-radius: 25px;
     margin: 20px 75px 15px 75px;
-
+    overflow: hidden;
+    transition: height 0.4s ease-in-out;
 }
 
 @media (max-width: 768px) {
@@ -172,10 +173,7 @@ a {
     color: yellowgreen;
 }
 
-.read-more-btn.collapsed::after {
-    content: "Read more";
-}
-
-.read-more-btn.expanded::after {
-    content: "Read less";
+.read-more-content {
+    max-height: 0;
+    overflow: hidden;
 }

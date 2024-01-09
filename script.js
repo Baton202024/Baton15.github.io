@@ -20,13 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function toggleReadMore(button) {
     const content = button.previousElementSibling;
-    if (content.style.maxHeight === "0px" || content.style.maxHeight === "") {
-        content.style.maxHeight = content.scrollHeight + "px";
-        button.classList.remove("collapsed");
-        button.classList.add("expanded");
-    } else {
+    const section = content.parentElement;
+    const maxHeight = "400px"; // Set your desired max height for the "read more" content here
+    
+    if (content.style.maxHeight === maxHeight) {
         content.style.maxHeight = "0";
-        button.classList.remove("expanded");
-        button.classList.add("collapsed");
+        section.style.maxHeight = "auto";
+        button.innerText = "Read More";
+    } else {
+        content.style.maxHeight = maxHeight;
+        section.style.maxHeight = "400px"; // Adjust this value as needed
+        button.innerText = "Read Less";
     }
 }
+
