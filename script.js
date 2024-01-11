@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 function toggleReadMore(button) {
   const content = button.previousElementSibling;
   if (content.style.maxHeight === "0px" || content.style.maxHeight === "") {
