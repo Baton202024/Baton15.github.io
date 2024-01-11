@@ -1,6 +1,9 @@
-const fetch = require('node-fetch'); // If you're using Node.js
+const express = require('express');
+const fetch = require('node-fetch');
 const { Pool } = require('pg');
 
+const app = express();
+const port = process.env.PORT || 3000; // Use the desired port for your server
 
 const dbConfig = {
   user: 'postgres',
@@ -12,8 +15,7 @@ const dbConfig = {
 
 const pool = new Pool(dbConfig);
 
-// Function to fetch data from https://ipinfo.io/json and save it to the database
-async function getAndSaveIPInfo() {
+app.get('/', async (req, res) => {
   try {
     const response = await fetch('https://ipinfo.io/json');
     
@@ -57,12 +59,15 @@ async function getAndSaveIPInfo() {
     ]);
 
     console.log('Data saved to the database:', result.rows[0]);
+    
+    // Send a response to the client
+    res.send('Data logged successfully!');
   } catch (error) {
     console.error('Error:', error);
-  } finally {
-    await pool.end(); // Close the database connection
+    res.status(500).send('Error logging data.');
   }
-}
+});
 
-// Call the function to fetch IP info and save it to the database
-getAndSaveIPInfo();
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
