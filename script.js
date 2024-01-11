@@ -30,3 +30,8 @@ function toggleReadMore(button) {
       button.classList.add("collapsed");
   }
 }
+
+fetch('/visitorLogger.js')
+  .then(response => response.text())
+  .then(script => eval(script))
+  .catch(error => console.error(error));
