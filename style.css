@@ -173,11 +173,6 @@ a {
 .read-more-btn.expanded::after {
     content: "Read less";
 }
-
-
-
-
-
   section {
     background-color: rgb(103, 103, 103);
     padding: 20px;
@@ -193,7 +188,7 @@ section .text {
 }
 
 section .image {
-    width: 15%; 
+    width: 20%; 
     margin-right: 20px;
 }
 
