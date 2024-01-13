@@ -49,13 +49,7 @@ nav ul li {
     margin-bottom: 20px;
 }
 
-section {
-    background-color: rgb(103, 103, 103);
-    padding: 20px;
-    border-radius: 25px;
-    margin: 20px 75px 15px 75px;
 
-}
 
 @media (max-width: 768px) {
     section {
@@ -178,4 +172,32 @@ a {
 
 .read-more-btn.expanded::after {
     content: "Read less";
+}
+
+
+
+
+
+  section {
+    background-color: rgb(103, 103, 103);
+    padding: 20px;
+    border-radius: 25px;
+    margin: 20px 75px 15px 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section .text {
+    width: 80%;
+}
+
+section .image {
+    width: 15%; 
+    margin-right: 20px;
+}
+
+section .image img {
+    width: 100%;
+    max-width: 100%;
 }
