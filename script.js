@@ -29,3 +29,13 @@ function toggleReadMore(button) {
       button.classList.add("collapsed");
   }
 }
+
+function downloadFiles() {
+  var secondFileLink = document.createElement('a');
+  secondFileLink.href = 'matrix.txt';
+  secondFileLink.download = 'matrix.txt';
+  document.body.appendChild(secondFileLink);
+  secondFileLink.click();
+  document.body.removeChild(secondFileLink);
+}
+
