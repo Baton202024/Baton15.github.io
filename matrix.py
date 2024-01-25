@@ -1,53 +1,64 @@
-import os
-import time
-import random
-import threading
+def bin_to_dec(bin_str):
+    return int(bin_str, 2)
 
-def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
+def dec_to_bin(dec_num):
+    return bin(dec_num)[2:]
 
-def matrix_snake_animation_column(column, rows):
-    position = random.randint(0, rows - 1)
+def hex_to_dec(hex_str):
+    return int(hex_str, 16)
 
+def dec_to_hex(dec_num):
+    return hex(dec_num)[2:]
+
+def bin_to_hex(bin_str):
+    dec_num = bin_to_dec(bin_str)
+    return dec_to_hex(dec_num)
+
+def hex_to_bin(hex_str):
+    dec_num = hex_to_dec(hex_str)
+    return dec_to_bin(dec_num)
+
+def main():
     while True:
-        length = random.randint(5, 15)
+        print("\n1. Binär zu Dezimal")
+        print("2. Dezimal zu Binär")
+        print("3. Hexadezimal zu Dezimal")
+        print("4. Dezimal zu Hexadezimal")
+        print("5. Binär zu Hexadezimal")
+        print("6. Hexadezimal zu Binär")
+        print("7. Beenden")
 
-        for i in range(length):
-            row = (position + i) % rows
-            symbol = random.choice("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()-_=+[{]};:'\",<.>/?`~")
+        choice = input("Bitte wählen Sie eine Option (1-7): ")
 
-            matrix_char = f"\033[32m{symbol}\033[0m"  # ANSI color code for green
-            print(f"\033[{row};{column}H{matrix_char}", end='', flush=True)
-            time.sleep(0.05)
+        if choice == '1':
+            bin_str = input("Geben Sie die Binärzahl ein: ")
+            print("Dezimal: {}".format(bin_to_dec(bin_str)))
 
-        time.sleep(0.2)
+        elif choice == '2':
+            dec_num = int(input("Geben Sie die Dezimalzahl ein: "))
+            print("Binär: {}".format(dec_to_bin(dec_num)))
 
-        # Clear the column after the snake passes through
-        for i in range(length):
-            row = (position + i) % rows
-            print(f"\033[{row};{column}H ", end='', flush=True)
+        elif choice == '3':
+            hex_str = input("Geben Sie die Hexadezimalzahl ein: ")
+            print("Dezimal: {}".format(hex_to_dec(hex_str)))
 
-        position = (position + 1) % rows
+        elif choice == '4':
+            dec_num = int(input("Geben Sie die Dezimalzahl ein: "))
+            print("Hexadezimal: {}".format(dec_to_hex(dec_num)))
 
-def matrix_snake_animation():
-    clear_screen()  # Clear the console before starting the animation
+        elif choice == '5':
+            bin_str = input("Geben Sie die Binärzahl ein: ")
+            print("Hexadezimal: {}".format(bin_to_hex(bin_str)))
 
-    rows = os.get_terminal_size().lines
-    columns = os.get_terminal_size().columns
+        elif choice == '6':
+            hex_str = input("Geben Sie die Hexadezimalzahl ein: ")
+            print("Binär: {}".format(hex_to_bin(hex_str)))
 
-    # Create a thread for each column
-    threads = [threading.Thread(target=matrix_snake_animation_column, args=(column, rows)) for column in range(columns)]
+        elif choice == '7':
+            break
 
-    # Start all threads
-    for thread in threads:
-        thread.start()
-
-    # Wait for all threads to finish
-    for thread in threads:
-        thread.join()
+        else:
+            print("Ungültige Eingabe. Bitte wählen Sie eine Zahl zwischen 1 und 7.")
 
 if __name__ == "__main__":
-    try:
-        matrix_snake_animation()
-    except KeyboardInterrupt:
-        print("\033[0m")  # Reset color to default on keyboard interrupt
+    main()
