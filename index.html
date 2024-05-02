@@ -67,7 +67,7 @@
         </section>
         <section class="hidden">
             <h2>3D game in Unity with C#</h2>
-            <p>I decided to turn my school, Sekundarschule Horgen, into a 3D game using Unity to improve my creative and
+            <p>I decided to turn my school into a 3D game using Unity to improve my creative and
                 technical skills.</p>
             <p>Despite facing difficulties, like losing the project and having to rebuild it, this experience showed my
                 endurance.</p>
@@ -81,10 +81,40 @@
             </div>
             <div class="read-more-btn collapsed" class="hover-underline-animation" onclick="toggleReadMore(this)"></div>
         </section>
+        <section class="hidden">
+            <h2>Cisco Packet Tracer</h2>
+            <p>Cisco Packet Tracer is a powerful tool to create network topologies and imitate modern computer networks.</p>
+            <p>This section is intended to provide a brief overview of this topic:</p>
+            <div class="read-more-content">
+                <p>I first encountered this software in module at the vocational school, <a
+                    style="color:rgb(202, 191, 248)" href="https://www.modulbaukasten.ch/module/129/3/de-DE?title=LAN-Komponenten-in-Betrieb-nehmen" class="hover-underline-animation">Module 129</a>. </p>
+                    <p>It was an extremely interesting experience, allowing me to create a variety of networks and explore the vast potential of the internet.
+                </p>
+                <p>
+                    <b style="font-size: 20px">Establish connection to different networks</b>
+                </p> 
+                <p>A simple network is illustrated here: </p>
+                <div style="text-align: center;">
+                    <img src="network_1.png" alt="Network" style="width: 900px; height: 400px;">
+                </div>
+                <p>All IP addresses and subnets have been correctly assigned. However, we are unable to ping the server from one of the PCs. The reason for this is that the router A is not aware of the existence of the network 192.168.2.0. 
+                    <br>What we need require now is a so-called IP route or IP hop. This enables the router to be informed of the network ID.</p>
+                <p>Once we have entered the router setting, we navigate to ROUTING -> Static. Here, we will need to enter the following IPs:</p>
+                <div style="text-align: center;">
+                    <img src="network_2.png" alt="Network" style="width: 600px; height: 150px;">
+                </div>
+                <p>Network: This is where we define the network ID that the router should be aware of.<br>
+                    Mask: This is where we define the subnet mask of the network ID.<br>
+                    Next Hop: This is where we tell the router A where the router is, that is able to redirect us to the network. In this instance, the appropiate router would be router B with the gateway address 192.168.3.2.
+                </p>
+            </div>
+            
+            <div class="read-more-btn collapsed" class="hover-underline-animation" onclick="toggleReadMore(this)"></div>
+        </section>
     </div>
     <br>
     <br>
-    <footer>&copy; 2024 Marlon's Blog</footer>
+    <footer>&copy; 2024 Marlon's Blog </footer>
 </body>
 
 </html>
